@@ -63,7 +63,7 @@ panel_install(){
     echo "" 
     apt update
     apt install certbot -y
-    if  [ "$dist" =  "ubuntu" ] && [ "$version" = "22.04" ]; then
+    if  [ "$dist" =  "ubuntu" ] && [ "$version" = "24.04" ]; then
         apt -y install software-properties-common curl apt-transport-https ca-certificates gnupg
         LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
         curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor --batch --yes -o /usr/share/keyrings/redis-archive-keyring.gpg
@@ -128,7 +128,7 @@ if [ -z "$FQDN" ] || [ -z "$SSL" ] || [ -z "$EMAIL" ] || [ -z "$USERNAME" ] || [
 fi
 
 echo "Checking your OS.."
-if { [ "$dist" = "ubuntu" ] && [ "$version" = "22.04" ]; } || { [ "$dist" = "debian" ] && [ "$version" = "11" ] || [ "$version" = "12" ]; }; then
+if { [ "$dist" = "ubuntu" ] && [ "$version" = "24.04" ]; } || { [ "$dist" = "debian" ] && [ "$version" = "11" ] || [ "$version" = "12" ]; }; then
     echo "Welcome to Autoinstall of Pterodactyl Panel"
     echo "Quick summary before the install begins:"
     echo ""
